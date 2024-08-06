@@ -1,0 +1,225 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@font-face {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    src: url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.btn-primary {
+    background-color: #c29d6c;
+    border-color: #c29d6c;
+    color: white;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #735e41;
+    border-color: #735e41;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+    background-color: #735e41;
+    border-color: #735e41;
+    box-shadow: 0 0 0 0.2rem rgba(169, 131, 81, 0.5);
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:active:focus,
+.btn-primary.active:focus {
+    background-color: #735e41;
+    border-color: #735e41;
+    box-shadow: none;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: white;
+    border-color: #a88250;
+    color: #c29d6c;
+    font-weight: 500;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    border-color: #735e41;
+    color: #735e41;
+}
+
+.btn-secondary:focus,
+.btn-secondary.focus {
+    background-color: white;
+    border-color: #735e41;
+    color: #735e41;
+    box-shadow: 0 0 0 0.2rem rgba(169, 131, 81, 0.5);
+}
+
+.btn-secondary:active,
+.btn-secondary.active,
+.btn-secondary:active:focus,
+.btn-secondary.active:focus {
+    background-color: white;
+    color: #735e41;
+    border-color: #735e41;
+    box-shadow: none;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler.focus,
+.navbar-toggler:active,
+.navbar-toggler.active {
+    box-shadow: none;
+}
+
+.navbar-toggler:active:focus,
+.navbar-toggler.active:focus {
+    box-shadow: none;
+}
+
+.offcanvas-size {
+   --bs-offcanvas-width: min(100vw, 300px) !important;
+}
+
+.offcanvas .offcanvas-body .navbar-nav {
+    margin-bottom: 60px !important;
+}
+
+.offcanvas-body .nav-link {
+    padding: 14px 16px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.offcanvas-body .nav-link:hover {
+    background-color: #eeeeee;
+    color: #c29d6c;
+}
+
+.offcanvas-body .nav-link.active {
+    color: #c29d6c;
+}
+
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.offcanvas-body .navbar-nav {
+    width: 100%;
+}
+
+.offcanvas-body .nav-item {
+    width: 100%;
+}
+
+.offcanvas-header {
+    padding: 30px 20px;
+}
+
+.nav-slogan {
+   font-size: 14px;
+}
+
+.nav-item-button {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+/* Small devices (landscape phones 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .btn-primary {
+        padding: 6px 16px;
+        width: 130px;
+        font-size: 14px;
+    }
+
+    .btn-secondary {
+        padding: 6px 16px;
+        width: 130px;
+        font-size: 14px;
+    }
+
+    .offcanvas .offcanvas-body .navbar-nav {
+        margin-bottom: 0px !important;
+    }
+
+    .offcanvas-body .nav-link {
+        font-weight: 500;
+        color: #1a1a1a;
+        padding: 0;
+        transition: none;
+        font-size: 14px;
+    }
+
+    .offcanvas-body .nav-link:hover {
+        background-color: white;
+        color: #735e41;
+    }
+
+    .offcanvas-body .nav-link.active {
+        color: #c19d6c !important;
+    }
+
+    .offcanvas-body {
+        display: block;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .offcanvas-body .navbar-nav {
+        width: auto;
+    }
+
+    .offcanvas-body .nav-item {
+        width: fit-content;
+    }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .btn-primary {
+        padding: 8px 20px;
+        width: 150px;
+        font-size: 16px;
+    }
+
+    .btn-secondary {
+        padding: 8px 20px;
+        width: 150px;
+        font-size: 16px;
+    }
+
+    .offcanvas-body .nav-link {
+        font-size: 16px;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
