@@ -90,7 +90,7 @@ body {
 }
 
 .offcanvas-size {
-   --bs-offcanvas-width: min(100vw, 300px) !important;
+    --bs-offcanvas-width: min(100vw, 300px) !important;
 }
 
 .offcanvas .offcanvas-body .navbar-nav {
@@ -134,13 +134,52 @@ body {
 }
 
 .nav-slogan {
-   font-size: 14px;
+    font-size: 14px;
 }
 
 .nav-item-button {
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hero-section {
+    z-index: -10 !important;
+    height: 70vh;
+    background-size: cover;
+    background-position: top;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+}
+
+.hero-section .hero-btn {
+    padding: 8px 16px;
+    width: 100%;
+    margin-top: 36px !important;
+}
+
+.hero-section .hero-title {
+    font-size: 26px;
+    font-weight: 700 !important;
+}
+
+.hero-section .hero-description {
+    font-size: 16px;
+    font-weight: 200 !important;
+    margin-top: 6px;
 }
 
 /* Small devices (landscape phones 576px and up) */
@@ -149,6 +188,12 @@ body {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    .hero-section .hero-btn {
+        padding: 8px 16px;
+        width: 200px !important;
+        font-size: 16px;
+        margin-top: 30px !important;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -198,6 +243,11 @@ body {
 
     .offcanvas-body .nav-item {
         width: fit-content;
+    }
+
+    .hero-section .hero-title {
+        font-size: 32px;
+        font-weight: 700 !important;
     }
 }
 

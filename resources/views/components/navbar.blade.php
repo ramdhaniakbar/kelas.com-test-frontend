@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg py-4 fixed-top">
+<nav class="navbar navbar-expand-lg py-4 fixed-top bg-white z-1">
     <div class="container justify-content-between">
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('assets/image/logo.svg') }}" alt="logo image" />
+        <a class="navbar-brand" href="{{ route('index') }}">
+            <img src="{{ asset('assets/svg/logo.svg') }}" alt="logo image" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -30,9 +30,9 @@
                         <a class="nav-link" href="#">Kontak Kami</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav px-3 px-lg-0 mx-auto ms-lg-auto">
-                    <a class="navbar-brand d-lg-none mb-2" href="#">
-                        <img src="{{ asset('assets/image/logo.svg') }}" alt="logo image" />
+                <ul class="navbar-nav px-3 px-lg-0">
+                    <a class="navbar-brand d-lg-none mb-2" href="{{ route('index') }}">
+                        <img src="{{ asset('assets/svg/logo.svg') }}" alt="logo image" />
                     </a>
                     <span class="nav-slogan d-lg-none mb-4">We accelerate learning in your company</span>
                     <li class="nav-item d-flex flex-column-reverse flex-lg-row nav-item-button">

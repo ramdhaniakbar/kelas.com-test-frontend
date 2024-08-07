@@ -4,9 +4,12 @@
 
 @section('content')
 
-<div class="container">
+<div>
     {{-- BEGIN NAVBAR --}}
     @include('components.navbar')
+
+    {{-- BEGIN HERO --}}
+    @include('components.hero')
 </div>
 
 @endsection
