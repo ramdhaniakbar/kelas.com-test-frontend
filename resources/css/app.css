@@ -184,7 +184,7 @@ body {
 
 .client-section {
     padding: 50px 0px;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
 }
 
 .client-section .client-title {
@@ -208,14 +208,14 @@ body {
 }
 
 .carousel-indicators button {
-    background: #D9D9D9 !important;
+    background: #d9d9d9 !important;
     border-radius: 50%;
     width: 15px !important;
     height: 0 !important;
 }
 
 .carousel-indicators .active {
-    background: #C19D6C !important;
+    background: #c19d6c !important;
 }
 
 .carousel-inner .client-image {
@@ -223,6 +223,53 @@ body {
 }
 
 .client-section .client-title {
+    font-size: 24px;
+    font-weight: 700 !important;
+}
+
+.benefit-section {
+    padding: 50px 20px;
+}
+
+.benefit-section .benefit-title {
+    font-size: 24px;
+    font-weight: 700 !important;
+}
+
+.benefit-section .benefit-description {
+    font-size: 16px;
+    font-weight: 200 !important;
+    margin-top: 6px;
+    padding: 0 10px;
+}
+
+.benefit-section .benefit-btn {
+    padding: 8px 20px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.btn-benefit-container {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.btn-benefit-container .benefit-btn {
+    flex: 0 0 auto;
+    margin-right: 0.5rem;
+}
+
+/* Optional: Hide the last margin */
+.btn-benefit-container .benefit-btn:last-child {
+    margin-right: 0;
+}
+
+.benefit-img {
+    background-color: #d9d9d9;
+    height: 300px;
+}
+
+.benefit-section .benefit-content-title {
     font-size: 24px;
     font-weight: 700 !important;
 }
@@ -247,6 +294,14 @@ body {
     .carousel-indicators button {
         width: 20px !important;
         height: 0 !important;
+    }
+
+    .benefit-section {
+        padding: 100px 20px;
+    }
+
+    .benefit-img {
+        height: 400px;
     }
 }
 
@@ -307,6 +362,26 @@ body {
     .client-section .client-title {
         font-size: 32px;
         font-weight: 700 !important;
+    }
+
+    .benefit-section .benefit-title {
+        font-size: 32px;
+        font-weight: 700 !important;
+    }
+
+    .benefit-section .benefit-description {
+        font-size: 16px;
+        font-weight: 200 !important;
+        margin-top: 6px;
+        padding: 0 260px;
+    }
+
+    .benefit-img {
+        height: 500px;
+    }
+
+    .benefit-content {
+        padding: 0 100px;
     }
 }
 

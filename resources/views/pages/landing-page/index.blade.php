@@ -13,6 +13,9 @@
 
     {{-- BEGIN CLIENTS --}}
     @include('components.clients')
+
+    {{-- BEGIN BENEFITS --}}
+    @include('components.benefits')
 </div>
 
 @endsection
