@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Benefit;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
@@ -18,9 +19,11 @@ class LandingController extends Controller
             ->first();
 
         if (!$benefit) {
-            $benefit = Benefit::with('benefit_privileges')->first(); // or handle the case as needed
+            $benefit = Benefit::with('benefit_privileges')->first();
         }
 
-        return view('pages.landing-page.index', compact('benefit'));
+        $subscriptions = Subscription::with('subscription_privileges')->get();
+
+        return view('pages.landing-page.index', compact('benefit', 'subscriptions'));
     }
 }
