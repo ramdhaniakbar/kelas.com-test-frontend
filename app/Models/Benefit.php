@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Benefit extends Model
 {
@@ -24,4 +25,9 @@ class Benefit extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function benefit_privileges(): HasMany
+    {
+        return $this->hasMany(BenefitPrivilege::class);
+    }
 }
