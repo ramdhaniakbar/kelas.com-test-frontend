@@ -16,7 +16,7 @@
                     <li class="list-footer">Kelas.Com</li>
                 </ul>
             </div>
-            <div class="d-flex flex-column gap-5">
+            <div class="d-flex flex-column gap-4">
                 <span class="title-footer">Kebijakan</span>
                 <ul class="d-flex flex-column gap-3">
                     <li class="list-footer">Kebijakan Privasi</li>
