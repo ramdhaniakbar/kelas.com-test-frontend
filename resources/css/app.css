@@ -489,6 +489,28 @@ body {
     color: #1A1A1A;
 }
 
+.footer-section {
+    padding: 60px 20px;
+    background-color: #1A1A1A;
+}
+
+.title-footer {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.list-footer {
+    padding-left: 0;
+    margin-left: 0;
+    color: white;
+}
+
 /* Small devices (landscape phones 576px and up) */
 @media (min-width: 576px) {
 }
@@ -527,6 +549,11 @@ body {
         flex: 0 0 400px;
         max-width: 400px;
         margin: 0.5rem 0;
+    }
+
+    .footer-section {
+        padding: 70px 100px;
+        background-color: #1A1A1A;
     }
 }
 

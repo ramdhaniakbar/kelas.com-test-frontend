@@ -25,6 +25,10 @@
 
     {{-- BEGIN CTA --}}
     @include('components.cta')
+
+
+    {{-- BEGIN CTA --}}
+    @include('components.footer')
 </div>
 
 @endsection
