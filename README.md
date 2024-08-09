@@ -44,14 +44,17 @@ $ npm run seed
 ```bash
 # development
 $ npm run build
+```
 
 ```bash
 # development
 $ npm run dev
+```
 
 ```bash
 # development
 $ php artisan serve
+```
 
 ## About Laravel
 
