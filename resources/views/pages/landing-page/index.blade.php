@@ -22,6 +22,9 @@
 
     {{-- BEGIN LEARNINGS --}}
     @include('components.learnings')
+
+    {{-- BEGIN CTA --}}
+    @include('components.cta')
 </div>
 
 @endsection

@@ -1,4 +1,4 @@
-<section class="learning-section">
+<section class="learning-section pb-5">
     <div class="d-flex flex-column justify-content-center align-items-center">
         <h1 class="benefit-title text-center">Lebih dari 2000+ Learning Video</h1>
         <span class="benefit-description text-center">Kami juga sudah menyediakan banyak pelatihan yang beragam,
