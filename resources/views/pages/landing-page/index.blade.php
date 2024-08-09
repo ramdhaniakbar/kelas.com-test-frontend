@@ -24,12 +24,17 @@
 
             <div class="d-flex justify-content-center gap-2 gap-md-3 mt-5">
                 <div class="btn-benefit-container d-flex flex-nowrap overflow-auto">
-                    <button type="button" class="btn btn-primary benefit-btn" onclick="loadBenefit('LMS')">LMS</button>
-                    <button type="button" class="btn btn-secondary benefit-btn"
+                    <button type="button"
+                        class="btn {{ $benefit->category == 'LMS' ? 'btn-primary' : 'btn-secondary' }} benefit-btn"
+                        onclick="loadBenefit('LMS')">LMS</button>
+                    <button type="button"
+                        class="btn {{ $benefit->category == 'Featured' ? 'btn-primary' : 'btn-secondary' }} benefit-btn"
                         onclick="loadBenefit('Featured')">Featured</button>
-                    <button type="button" class="btn btn-secondary benefit-btn"
+                    <button type="button"
+                        class="btn {{ $benefit->category == 'Video Learning + Live Webinar' ? 'btn-primary' : 'btn-secondary' }} benefit-btn"
                         onclick="loadBenefit('Video Learning + Live Webinar')">Video Learning + Live Webinar</button>
-                    <button type="button" class="btn btn-secondary benefit-btn"
+                    <button type="button"
+                        class="btn {{ $benefit->category == 'Inquiry Learning' ? 'btn-primary' : 'btn-secondary' }} benefit-btn"
                         onclick="loadBenefit('Inquiry Learning')">Inquiry Learning</button>
                 </div>
             </div>
@@ -83,16 +88,19 @@
                                         <div class="d-flex gap-2 align-items-center justify-content-start">
                                             <img src="{{ asset('assets/image/check_circle_dark.png') }}" width="24"
                                                 alt="check circle">
-                                            <span class="subscription-content-list">{{ $subscription_privilege->name }}</span>
+                                            <span
+                                                class="subscription-content-list">{{ $subscription_privilege->name }}</span>
                                         </div>
                                     @endforeach
                                 @endif
                             </div>
                             <img src="{{ asset('assets/image/divider.png') }}" class="w-100 mt-3" alt="Divider">
                             <div class="d-flex flex-column gap-1 mt-3">
-                                <span class="subscription-normal-price">Rp{{ Number::format($subscription->normal_price, locale: 'id') }}</span>
+                                <span
+                                    class="subscription-normal-price">Rp{{ Number::format($subscription->normal_price, locale: 'id') }}</span>
                                 <div class="d-flex align-items-center"><span
-                                        class="subscription-selling-price">Rp{{ Number::format($subscription->selling_price, locale: 'id') }}</span><span>/bulan</span></div>
+                                        class="subscription-selling-price">Rp{{ Number::format($subscription->selling_price, locale: 'id') }}</span><span>/bulan</span>
+                                </div>
                             </div>
                             <button type="button"
                                 class="btn {{ $subscription->name == 'Pro' ? 'btn-subscription-pro' : 'btn-subscription' }} w-100 mt-3">Pilih
@@ -100,7 +108,7 @@
                         </div>
                     @endforeach
                 @else
-                    <p>No benefit information available.</p>
+                    <p>No subscription information available.</p>
                 @endif
             </div>
 
@@ -146,7 +154,56 @@
 
 
         {{-- BEGIN LEARNINGS --}}
-        @include('components.learnings')
+        <section class="learning-section pb-5">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <h1 class="benefit-title text-center">Lebih dari 2000+ Learning Video</h1>
+                <span class="benefit-description text-center">Kami juga sudah menyediakan banyak pelatihan yang beragam,
+                    pelatihan disusun dan dibuat oleh tim kurikulum profesional bersama tim video profesional untuk
+                    menghasilkan
+                    video dengan kualitas tinggi</span>
+            </div>
+
+            <div class="d-flex justify-content-center gap-2 gap-md-3 mt-5">
+                <div class="btn-benefit-container d-flex flex-nowrap overflow-auto">
+                    <button type="button"
+                        class="btn {{ $class_category->category == 'Kelas.com' ? 'btn-primary' : 'btn-secondary' }} benefit-btn"
+                        onclick="filterLearning('Kelas.com')">Kelas.com</button>
+                    <button type="button"
+                        class="btn {{ $class_category->category == 'Kelas.work' ? 'btn-primary' : 'btn-secondary' }} benefit-btn"
+                        onclick="filterLearning('Kelas.work')">Kelas.work</button>
+                    <button type="button"
+                        class="btn {{ $class_category->category == 'Bootcamp' ? 'btn-primary' : 'btn-secondary' }} benefit-btn"
+                        onclick="filterLearning('Bootcamp')">Bootcamp</button>
+                </div>
+            </div>
+
+            {{-- @dd($category); --}}
+            <div class="container my-5">
+                <div id="learnings-container" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                    @if ($learnings)
+                        @foreach ($learnings as $learning)
+                            <div class="col">
+                                <div class="card shadow"
+                                    style="border: none; background-color: white; border-radius: 10px; overflow: hidden;">
+                                    <div class="d-md-block w-100"
+                                        style="background-image: url('{{ asset('assets/image/learning-thumbnail.png') }}'); height: 200px; background-size: cover;">
+                                    </div>
+                                    <div class="d-flex flex-column px-3 py-3">
+                                        <span class="learning-card-title mb-3">{{ $learning->title }}</span>
+                                        <span class="learning-card-mentor mb-1">{{ $learning->mentor }}</span>
+                                        <span class="learning-card-job">{{ $learning->job_mentor }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        <p>No learnings information available.</p>
+                    @endif
+                </div>
+            </div>
+
+        </section>
+
 
         {{-- BEGIN CTA --}}
         @include('components.cta')
@@ -160,16 +217,25 @@
 
 @section('scripts')
     <script>
-        function loadBenefit(category) {
-            console.log('category ', category);
+        function filterLearning(category) {
             fetch(`{{ route('index') }}?category=${encodeURIComponent(category)}`)
-                .then((response) => response.text())
+                .then(response => response.text())
                 .then(data => {
-                    console.log('data ', data);
                     document.querySelector('.kelas-center').innerHTML = data;
                 }).catch((err) => {
                     console.log(err);
                 });
         }
+
+        function loadBenefit(type) {
+            fetch(`{{ route('index') }}?type=${encodeURIComponent(type)}`)
+                .then((response) => response.text())
+                .then(data => {
+                    document.querySelector('.kelas-center').innerHTML = data;
+                }).catch((err) => {
+                    console.log(err);
+                });
+        }
+
     </script>
 @endsection
