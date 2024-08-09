@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('description')->nullable();
             $table->longText('image')->nullable();
+            $table->string('category');
             $table->timestamps();
         });
     }

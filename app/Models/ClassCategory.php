@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subscription extends Model
+class ClassCategory extends Model
 {
     use HasFactory;
 
-    protected $table = 'subscriptions';
+    protected $table = 'class_categories';
 
     protected $dates = [
         'created_at',
@@ -17,9 +17,7 @@ class Subscription extends Model
     ];
 
     protected $fillable = [
-        'name',
-        'normal_price',
-        'selling_price',
+        'category',
         'created_at',
         'updated_at'
     ];
