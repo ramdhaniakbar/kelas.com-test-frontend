@@ -1,4 +1,4 @@
-<section class="benefit-section">
+{{-- <section class="benefit-section">
     <div class="d-flex flex-column justify-content-center align-items-center">
         <h1 class="benefit-title text-center">Bagaimana Kelas Center Membantu Anda?</h1>
         <span class="benefit-description text-center">Kami menghadirkan platform pembelajaran yang komprehensif untuk
@@ -55,4 +55,4 @@
         </div>
         <div class="d-none d-md-block w-100 benefit-img"></div>
     </div>
-</section>
+</section> --}}

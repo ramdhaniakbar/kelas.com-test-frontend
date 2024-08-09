@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div>
+    <div class="kelas-center">
         {{-- BEGIN NAVBAR --}}
         @include('components.navbar')
 
@@ -15,7 +15,7 @@
         @include('components.clients')
 
         {{-- BEGIN BENEFITS --}}
-        <section class="benefit-section">
+        <section id="benefit-section" class="benefit-section">
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <h1 class="benefit-title text-center">Bagaimana Kelas Center Membantu Anda?</h1>
                 <span class="benefit-description text-center">Kami menghadirkan platform pembelajaran yang komprehensif untuk
@@ -24,10 +24,13 @@
 
             <div class="d-flex justify-content-center gap-2 gap-md-3 mt-5">
                 <div class="btn-benefit-container d-flex flex-nowrap overflow-auto">
-                    <button type="button" class="btn btn-primary benefit-btn">LMS</button>
-                    <button type="button" class="btn btn-secondary benefit-btn">Featured</button>
-                    <button type="button" class="btn btn-secondary benefit-btn">Video Learning + Live Webinar</button>
-                    <button type="button" class="btn btn-secondary benefit-btn">Inquiry Learning</button>
+                    <button type="button" class="btn btn-primary benefit-btn" onclick="loadBenefit('LMS')">LMS</button>
+                    <button type="button" class="btn btn-secondary benefit-btn"
+                        onclick="loadBenefit('Featured')">Featured</button>
+                    <button type="button" class="btn btn-secondary benefit-btn"
+                        onclick="loadBenefit('Video Learning + Live Webinar')">Video Learning + Live Webinar</button>
+                    <button type="button" class="btn btn-secondary benefit-btn"
+                        onclick="loadBenefit('Inquiry Learning')">Inquiry Learning</button>
                 </div>
             </div>
 
@@ -36,17 +39,21 @@
                     <h2 class="benefit-content-title mb-3 mb-lg-2">{{ $benefit->title }}</h2>
                     <div class="d-block d-md-none w-100 benefit-img"></div>
                     <span class="benefit-content-description">{{ $benefit->description }}</span>
-                    @foreach ($benefit->benefit_privileges as $benefit_privilege)
-                        <div class="d-flex flex-column gap-2">
-                            <div class="d-flex gap-2 align-items-center justify-content-start benefit-content-list">
-                                <img src="{{ asset('assets/image/check_small.png') }}" width="30" alt="check small">
-                                <h3 class="benefit-content-title-list">{{ $benefit_privilege->title }}</h3>
+                    @if ($benefit && $benefit->benefit_privileges)
+                        @foreach ($benefit->benefit_privileges as $benefit_privilege)
+                            <div class="d-flex flex-column gap-2">
+                                <div class="d-flex gap-2 align-items-center justify-content-start benefit-content-list">
+                                    <img src="{{ asset('assets/image/check_small.png') }}" width="30" alt="check small">
+                                    <h3 class="benefit-content-title-list">{{ $benefit_privilege->title }}</h3>
+                                </div>
+                                <div class="benefit-content-list-description w-75">
+                                    <span class="">{{ $benefit_privilege->description }}</span>
+                                </div>
                             </div>
-                            <div class="benefit-content-list-description w-75">
-                                <span class="">{{ $benefit_privilege->description }}</span>
-                            </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @else
+                        <p>No benefit information available.</p>
+                    @endif
                 </div>
                 <div class="d-none d-md-block w-100 benefit-img"></div>
             </div>
@@ -67,4 +74,20 @@
         @include('components.footer')
     </div>
 
+@endsection
+
+@section('scripts')
+    <script>
+        function loadBenefit(category) {
+            console.log('category ', category);
+            fetch(`{{ route('index') }}?category=${encodeURIComponent(category)}`)
+                .then((response) => response.text())
+                .then(data => {
+                    console.log('data ', data);
+                    document.querySelector('.kelas-center').innerHTML = data;
+                }).catch((err) => {
+                    console.log(err);
+                });
+        }
+    </script>
 @endsection
