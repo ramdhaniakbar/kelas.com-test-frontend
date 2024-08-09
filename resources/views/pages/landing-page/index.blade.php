@@ -16,6 +16,9 @@
 
     {{-- BEGIN BENEFITS --}}
     @include('components.benefits')
+
+    {{-- BEGIN SUBSCRIPTIONS --}}
+    @include('components.subscriptions')
 </div>
 
 @endsection

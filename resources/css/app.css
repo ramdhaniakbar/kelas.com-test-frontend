@@ -274,6 +274,146 @@ body {
     font-weight: 700 !important;
 }
 
+.benefit-section .benefit-content-description {
+    font-size: 16px;
+    font-weight: 200 !important;
+    margin-top: 6px;
+}
+
+.benefit-content-list {
+    width: 100%;
+    background-color: #F6F6F6;
+    padding: 8px 15px;
+    margin-top: 20px;
+}
+
+.benefit-section .benefit-content-title-list {
+    font-size: 20px;
+    font-weight: 500 !important;
+    margin-top: 4px;
+}
+
+.benefit-section .benefit-content-list-description {
+    font-size: 16px;
+    font-weight: 200 !important;
+    margin-top: 6px;
+}
+
+.subscription-section {
+    padding: 50px 20px;
+}
+
+.subscription-section .subscription-title {
+    font-size: 24px;
+    font-weight: 700 !important;
+}
+
+.subscription-section .subscription-pack-title {
+    font-size: 24px;
+    font-weight: 700 !important;
+}
+
+.subscription-privilege {
+    font-size: 20px;
+    font-weight: 200;
+    color: #8A8A8A;
+}
+
+.subscription-normal-price {
+    color: #2D6075;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.subscription-selling-price {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.subscription-section .btn-subscription {
+    background-color: #87BBD1;
+    font-weight: 500;
+    padding: 14px 0;
+    border-radius: 10px;
+}
+
+.subscription-section .btn-subscription-pro {
+    background-color: #2D6075;
+    color: white;
+    font-weight: 500;
+    padding: 14px 0;
+    border-radius: 10px;
+}
+
+.btn-subscription:hover {
+    background-color: #6098b0;
+}
+
+.btn-subscription:focus,
+.btn-subscription.focus {
+    background-color: #6098b0;
+    border-color: #6098b0;
+    box-shadow: 0 0 0 0.1rem rgba(81, 137, 160, 0.5);
+}
+
+.btn-subscription:active,
+.btn-subscription.active,
+.btn-subscription:active:focus,
+.btn-subscription.active:focus {
+    background-color: #6098b0;
+    border-color: #6098b0;
+    box-shadow: none;
+}
+
+.btn-subscription-pro:hover {
+    background-color: #204757;
+}
+
+.btn-subscription-pro:focus,
+.btn-subscription-pro.focus {
+    background-color: #204757;
+    border-color: #204757;
+    box-shadow: 0 0 0 0.1rem rgba(81, 137, 160, 0.5);
+}
+
+.btn-subscription-pro:active,
+.btn-subscription-pro.active,
+.btn-subscription-pro:active:focus,
+.btn-subscription-pro.active:focus {
+    background-color: #204757;
+    border-color: #204757;
+    box-shadow: none;
+    color: white;
+}
+
+.subscription-card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.subscription-card {
+    flex: 0 0 310px;
+    max-width: 310px;
+    margin: 0.5rem 0;
+    border-radius: 20px 20px 0 0;
+}
+
+.subscription-card-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.subscription-card-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.subscription-card-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
 /* Small devices (landscape phones 576px and up) */
 @media (min-width: 576px) {
 }
@@ -302,6 +442,16 @@ body {
 
     .benefit-img {
         height: 400px;
+    }
+
+    .benefit-content-list {
+        width: 85%;
+    }
+
+    .subscription-card {
+        flex: 0 0 400px;
+        max-width: 400px;
+        margin: 0.5rem 0;
     }
 }
 
@@ -383,6 +533,11 @@ body {
     .benefit-content {
         padding: 0 100px;
     }
+
+    .subscription-section .subscription-title {
+        font-size: 32px;
+        font-weight: 700 !important;
+    }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
@@ -401,6 +556,10 @@ body {
 
     .offcanvas-body .nav-link {
         font-size: 16px;
+    }
+
+    .subscription-card-container {
+        justify-content: center;
     }
 }
 
