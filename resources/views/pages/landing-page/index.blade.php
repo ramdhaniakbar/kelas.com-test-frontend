@@ -19,6 +19,9 @@
 
     {{-- BEGIN SUBSCRIPTIONS --}}
     @include('components.subscriptions')
+
+    {{-- BEGIN LEARNINGS --}}
+    @include('components.learnings')
 </div>
 
 @endsection

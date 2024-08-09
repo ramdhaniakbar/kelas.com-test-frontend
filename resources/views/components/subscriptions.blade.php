@@ -163,4 +163,41 @@
             <button type="button" class="btn btn-subscription-pro w-100 mt-3">Pilih Paket</button>
         </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="subscription-footer w-100">
+         <div class="d-flex flex-column flex-lg-row justify-content-start justify-content-lg-between">
+            <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
+                <div class="d-flex align-items-center gap-4 me-5">
+                    <img src="{{ asset('assets/image/building.png') }}" width="40" alt="subscription starter">
+                    <span class="subscription-footer-title">Enterprise</span>
+                </div>
+                <div class="d-flex flex-column flex-lg-row gap-3 mt-4 mt-lg-0">
+                    <div class="d-flex gap-1">
+                        <img src="{{ asset('assets/image/check_circle_light.png') }}" width="24" height="24"
+                            alt="check light">
+                        <span class="subscription-content-list text-white">
+                            >100 users
+                        </span>
+                    </div>
+                    <div class="d-flex gap-1">
+                        <img src="{{ asset('assets/image/check_circle_light.png') }}" width="24" height="24"
+                            alt="check light">
+                        <span class="subscription-content-list text-white">
+                           All Access Class
+                        </span>
+                    </div>
+                    <div class="d-flex gap-1">
+                        <img src="{{ asset('assets/image/check_circle_light.png') }}" width="24" height="24"
+                            alt="check light">
+                        <span class="subscription-content-list text-white">
+                           More Features
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-secondary mt-4 mt-lg-0" style="padding: 15px 10px;">Contact Us</button>
+         </div>
+        </div>
+    </div>
 </section>
